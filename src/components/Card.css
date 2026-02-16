@@ -1,0 +1,112 @@
+.item {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  cursor: zoom-in;
+}
+
+.image {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.image img {
+  width: 100%;
+  display: block;
+  border-radius: 16px;
+}
+
+/* BOTON GUARDAR (hover pinterest) */
+.btn-save {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #e60023;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 24px;
+  font-weight: 600;
+  text-decoration: none;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.image:hover .btn-save {
+  opacity: 1;
+}
+
+/* ICONOS */
+.icon-upload,
+.icon-dots {
+  position: absolute;
+  bottom: 12px;
+  background: white;
+  padding: 8px;
+  border-radius: 50%;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.icon-upload {
+  right: 48px;
+}
+
+.icon-dots {
+  right: 12px;
+}
+
+.image:hover .icon-upload,
+.image:hover .icon-dots {
+  opacity: 1;
+}
+
+/* TITULO */
+.pin-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 8px 4px;
+}
+
+/* USER */
+.pin-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px;
+}
+
+.user {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+.image {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* overlay oscuro */
+.image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  transition: 0.25s ease;
+}
+
+/* efecto hover */
+.image:hover::after {
+  background: rgba(0,0,0,0.25);
+}
+
+/* pequeño zoom como pinterest */
+.image img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.image:hover img {
+  transform: scale(1.03);
+}
